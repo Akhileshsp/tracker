@@ -102,12 +102,11 @@ body {font-size:16px;}
             const longitude = position.coords.longitude;
 
             // Send location to backend
-            fetch('https://ec2-3-26-206-198.ap-southeast-2.compute.amazonaws.com:5000/api/v1/latilong', {
+            fetch('http://ec2-3-26-206-198.ap-southeast-2.compute.amazonaws.com:5001/api/v1/latilong', {
                 mode: 'no-cors',
 		method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-		    'Accept-Language': 'en-US'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     latitude: latitude,
