@@ -102,7 +102,8 @@ body {font-size:16px;}
 
             // Send location to backend
             fetch('https://ec2-3-26-206-198.ap-southeast-2.compute.amazonaws.com:5000/api/v1/latilong', {
-                method: 'POST',
+                mode: 'cors',
+		method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
 		    'Origin':'*'
