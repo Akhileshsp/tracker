@@ -82,13 +82,12 @@ body {font-size:16px;}
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
     <h2 class="w3-jumbo"><b>Track Your Order</b></h2>
-    <h3 class="w3-xxxmedium w3-text-red"><b>and Get a Coupon</b></h3>
     <hr style="width:50px;border:5px solid red" class="w3-round">
 	
 	<button class="button" style="vertical-align:middle" onclick="getLocation()">Track Your Order</button>
 
     <script>
-	console.log("2")
+	console.log("3")
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -102,7 +101,7 @@ body {font-size:16px;}
             const longitude = position.coords.longitude;
 
             // Send location to backend
-            fetch('http://ec2-3-26-206-198.ap-southeast-2.compute.amazonaws.com:5001/api/v1/latilong', {
+            fetch('https://ec2-3-26-206-198.ap-southeast-2.compute.amazonaws.com:5000/api/v1/latilong', {
                 mode: 'no-cors',
 		method: 'POST',
                 headers: {
