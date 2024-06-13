@@ -4,9 +4,9 @@
 <title>Track your order</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" href="http://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Poppins">
+<script src="http://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
@@ -104,14 +104,14 @@ latitude.textContent = json.latitude;
 longitude.textContent = json.longitude;
 }
 </script>
-<script async src="https://get.geojs.io/v1/ip/geo.js"></script>
+<script async src="http://get.geojs.io/v1/ip/geo.js"></script>
 
     <hr style="width:50px;border:5px solid red" class="w3-round">
 	
 	<button class="button" style="vertical-align:middle" onclick="getLocation()">Track Your Order</button>
 
     <script>
-	console.log("3")
+	console.log("4")
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -148,27 +148,6 @@ longitude.textContent = json.longitude;
                 });
 		
 			//axios
-		
-            // Send location to backend
-  //           fetch('https://ec2-3-26-206-198.ap-southeast-2.compute.amazonaws.com:5000/api/v1/latilong', {
-		// method: 'POST',
-  //               headers: {
-  //                   'Content-Type': 'application/json',
-		//     'Accept-Language': 'en-US',
-		//     'Origin':null
-  //               },
-  //               body: JSON.stringify({
-  //                   latitude: latitude,
-  //                   longitude: longitude
-  //               })
-  //           })
-  //           .then(response => response.json())
-  //           .then(data => {
-  //               console.log('Success:', data);
-  //           })
-  //           .catch((error) => {
-  //               console.error('Error:', error);
-  //           });
         }
 
         function showError(error) {
@@ -225,7 +204,7 @@ longitude.textContent = json.longitude;
 </div>
 
 <!-- W3.CSS Container -->
-<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="http://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
 
 <script crossorigin="">
 // Script to open and close sidebar
