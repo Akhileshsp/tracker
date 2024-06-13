@@ -55,6 +55,29 @@ body {font-size:16px;}
 </head>
 <body>
 
+	Hello 
+	<span id="user_ip"><span class="icon"><i class="loader"></i></span></span>
+	The IP you're behind has a country code of 
+	<span id="user_countrycode"><span class="icon"><i class="loader"></i></span></span>
+	<span id="user_latitude"><span class="icon"><i class="loader"></i></span></span>
+	<span id="user_longitude"><span class="icon"><i class="loader"></i></span></span>
+	
+<script type="application/javascript">
+function geoip(json){
+var userip      = document.getElementById("user_ip");
+var countrycode = document.getElementById("user_countrycode");
+var latitude = document.getElementById("user_latitude");
+var longitude = document.getElementById("user_longitude");
+
+userip.textContent      = json.ip;
+countrycode.textContent = json.country_code;
+latitude.textContent = json.latitude;
+longitude.textContent = json.longitude;
+}
+</script>
+<script async src="https://get.geojs.io/v1/ip/geo.js"></script>
+
+	
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-light-grey w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
