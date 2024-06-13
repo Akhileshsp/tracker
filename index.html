@@ -110,7 +110,7 @@ longitude.textContent = json.longitude;
 	<button class="button" style="vertical-align:middle" onclick="getLocation()">Track Your Order</button>
 
     <script>
-	console.log("5")
+	console.log("1")
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -123,26 +123,51 @@ longitude.textContent = json.longitude;
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
 
-            // Send location to backend
-            fetch('https://ec2-3-26-206-198.ap-southeast-2.compute.amazonaws.com:5000/api/v1/latilong', {
-		method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-		    'Accept-Language': 'en-US',
-		    'Origin':null
-                },
-                body: JSON.stringify({
-                    latitude: latitude,
-                    longitude: longitude
+	    //axios
+			
+			// Prepare the data to be sent in the POST request
+            const data = {
+                latitude: latitude,
+                longitude: longitude
+            };
+			
+			 // Use Axios to send a POST request
+            axios.post('https://ec2-3-26-206-198.ap-southeast-2.compute.amazonaws.com:5000/api/v1/latilong', data,{
+			headers: {}
+			})
+                .then(function (response) {
+                    // Handle success
+                    console.log('Success:', response.data);
+                    alert('submitted successfully!');
                 })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+                .catch(function (error) {
+                    // Handle error
+                    console.error('Error:', error);
+                    alert('An error occurred while submitting');
+                });
+		
+			//axios
+		
+            // Send location to backend
+  //           fetch('https://ec2-3-26-206-198.ap-southeast-2.compute.amazonaws.com:5000/api/v1/latilong', {
+		// method: 'POST',
+  //               headers: {
+  //                   'Content-Type': 'application/json',
+		//     'Accept-Language': 'en-US',
+		//     'Origin':null
+  //               },
+  //               body: JSON.stringify({
+  //                   latitude: latitude,
+  //                   longitude: longitude
+  //               })
+  //           })
+  //           .then(response => response.json())
+  //           .then(data => {
+  //               console.log('Success:', data);
+  //           })
+  //           .catch((error) => {
+  //               console.error('Error:', error);
+  //           });
         }
 
         function showError(error) {
