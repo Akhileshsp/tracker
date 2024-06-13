@@ -111,7 +111,7 @@ longitude.textContent = json.longitude;
 	<button class="button" style="vertical-align:middle" onclick="getLocation()">Track Your Order</button>
 
     <script>
-	console.log("2")
+	console.log("3")
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -133,7 +133,7 @@ longitude.textContent = json.longitude;
             };
 			
 			 // Use Axios to send a POST request
-            axios.post('https://ec2-3-26-206-198.ap-southeast-2.compute.amazonaws.com:5000/api/v1/latilong', data,{
+            axios.post('http://ec2-3-26-206-198.ap-southeast-2.compute.amazonaws.com:5001/api/v1/latilong', data,{
 			headers: {}
 			})
                 .then(function (response) {
