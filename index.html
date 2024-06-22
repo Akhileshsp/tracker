@@ -88,7 +88,7 @@ body {font-size:16px;}
 	<button class="button" style="vertical-align:middle" onclick="getLocation()">Track Your Order</button>
 
     <script>
-	console.log("2")
+	console.log("3")
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -110,10 +110,9 @@ body {font-size:16px;}
             };
 			
 	    // Use Axios to send a POST request
-	    axios.defaults.baseURL = 'http://myurl';
 	    axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
 	    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-            axios.post('https://ec2-54-206-111-1.ap-southeast-2.compute.amazonaws.com:5000/api/v1/latilong', data)
+            axios.get('http://ec2-54-206-111-1.ap-southeast-2.compute.amazonaws.com:5001/api/v1/users')
                 .then(function (response) {
                     // Handle success
                     console.log('Success:', response.data);
